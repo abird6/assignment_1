@@ -16,11 +16,14 @@ import org.joda.time.LocalDate;
 
 class StudentTest {
 	
+	// test objects
 	Student student;
+	LocalDate dob;
 	
 	@BeforeEach
 	void setup() {
-		student = new Student("19357176", "Anthony Bird", "21", null, new LocalDate(2000, 10, 10), null);	// course and module fields left null
+		dob = new LocalDate(2000, 10, 10);
+		student = new Student("19357176", "Anthony Bird", "21", null, dob, null);	// course and module fields left null
 	}
 	
 	// ====================== Accessor Method Testing ======================
@@ -45,7 +48,7 @@ class StudentTest {
 	@Test
 	@DisplayName("Test accessor method for 'date of birth'")
 	void testGetDOB() {
-		assertEquals(new LocalDate(2000, 10, 10), student.getDOB(), "Student's DOB is 10/10/2000");
+		assertSame(dob, student.getDOB(), "'dob' test object and method return should be the same");
 	}
 	
 	@Test
@@ -94,8 +97,9 @@ class StudentTest {
 	@Test
 	@DisplayName("Tesing mutator for date of birth")
 	void testSetDOB() {
-		student.setDOB(new LocalDate(2005, 11, 12));
-		assertEquals(new LocalDate(2005, 11, 12), student.getDOB(), "Student's date of birth should be 12/11/2005");
+		LocalDate changeDOB = new LocalDate(2005, 11, 12);
+		student.setDOB(changeDOB);
+		assertSame(changeDOB, student.getDOB(), "New LocalDate object should be returned in accessor");
 	}
 
 }

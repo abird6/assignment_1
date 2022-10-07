@@ -15,11 +15,15 @@ import org.junit.jupiter.api.Test;
 
 class CourseProgrammeTest {
 
+	// test objects
+	LocalDate startDate, endDate;
 	CourseProgramme course;
 	
 	@BeforeEach
 	void setup() {
-		course = new CourseProgramme("ECE", null, null, new LocalDate(2022, 9, 23), new LocalDate(2023, 5, 1));
+		startDate = new LocalDate(2022, 9, 23);
+		endDate =  new LocalDate(2023, 5, 1);
+		course = new CourseProgramme("ECE", null, null, startDate, endDate);
 	}
 	
 	// ====================== Accessor Method Testing ======================
@@ -33,13 +37,13 @@ class CourseProgrammeTest {
 	@Test
 	@DisplayName("Test accessor for 'startDate'")
 	void testGetStartDate() {
-		assertEquals(new LocalDate(2022, 9, 23), course.getStartDate(), "Course should start on 23/9/2022");
+		assertSame(startDate, course.getStartDate(), "'startDate' test object and method return should be the same");
 	}
 	
 	@Test
 	@DisplayName("Test accessor for 'endDate'")
 	void testGetEndDate() {
-		assertEquals(new LocalDate(2023, 5, 1), course.getEndDate(), "Course should end on 1/5/2023");
+		assertSame(endDate, course.getEndDate(), "'endDate' test object and method return should be the same");
 	}
 	
 	// ====================== Mutator Method Testing ======================
@@ -54,14 +58,16 @@ class CourseProgrammeTest {
 	@Test
 	@DisplayName("Test mutator for 'startDate'")
 	void testSetStartDate() {
-		course.setStartDate(new LocalDate(2023, 9, 25));
-		assertEquals(new LocalDate(2023, 9, 25), course.getStartDate(), "Course should now start on 25/9/2023");
+		LocalDate changeStartDate = new LocalDate(2023, 9, 25);
+		course.setStartDate(changeStartDate);
+		assertSame(changeStartDate, course.getStartDate(), "New LocalDate object should be returned in accessor");
 	}
 	
 	@Test
 	@DisplayName("Test mutator for 'endDate'")
 	void testSetEndDate() {
-		course.setEndDate(new LocalDate(2024, 5, 30));
-		assertEquals(new LocalDate(2024, 5, 30), course.getEndDate(), "Course should now end on 30/5/2023");
+		LocalDate changeEndDate = new LocalDate(2024, 5, 30);
+		course.setEndDate(changeEndDate);
+		assertSame(changeEndDate, course.getEndDate(), "New LocalDate object should be returned in accessor");;
 	}
 }

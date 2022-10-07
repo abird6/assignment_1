@@ -15,6 +15,7 @@ import org.junit.jupiter.api.Test;
 
 class ModuleTest {
 
+	// test objects
 	Module module;
 	
 	@BeforeEach

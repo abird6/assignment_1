@@ -14,11 +14,14 @@ import org.junit.jupiter.api.Test;
 
 class LecturerTest {
 	
+	// test objects
+	LocalDate dob;
 	Lecturer lecturer;
 	
 	@BeforeEach
 	void setup() {
-		lecturer = new Lecturer("12345", "Dr Joe Bloggs", "42", new LocalDate(1980, 12, 25), null);
+		dob = new LocalDate(1980, 12, 25);
+		lecturer = new Lecturer("12345", "Dr Joe Bloggs", "42", dob, null);
 	}
 	
 	// ====================== Accessor Method Testing ======================
@@ -44,7 +47,7 @@ class LecturerTest {
 	@Test
 	@DisplayName("Test accessor method for 'date of birth'")
 	void testGetDOB() {
-		assertEquals(new LocalDate(1980, 12, 25), lecturer.getDOB(), "Lecturer has dob: 15/12/1980");
+		assertSame(dob, lecturer.getDOB(), "'dob' test object and method return should be the same");
 	}
 	
 	@Test
@@ -86,8 +89,9 @@ class LecturerTest {
 	@Test
 	@DisplayName("Tesing mutator for date of birth")
 	void testSetDOB() {
-		lecturer.setDOB(new LocalDate(1990, 11, 12));
-		assertEquals(new LocalDate(1990, 11, 12), lecturer.getDOB(), "Lecturer should now have dob: 12/11/1990");
+		LocalDate changeDOB = new LocalDate(1990, 11, 12);
+		lecturer.setDOB(changeDOB);
+		assertSame(changeDOB, lecturer.getDOB(), "New LocalDate object should be returned in accessor");
 	}
 
 }
