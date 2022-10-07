@@ -1,3 +1,10 @@
+/**
+ * Student test class used to test 'Student.java' methods
+ * independent of other classes
+ * @author Anthony Bird
+ *
+ */
+
 package ct417_assignment_1_a_bird;
 
 import org.junit.jupiter.api.BeforeEach;
@@ -6,13 +13,6 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.joda.time.LocalDate;
-
-/**
- * Student test class used to test 'Student.java' methods
- * independent of other classes
- * @author Anthony Bird
- *
- */
 
 class StudentTest {
 	
