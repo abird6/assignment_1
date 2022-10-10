@@ -20,7 +20,7 @@ class ModuleTest {
 	
 	@BeforeEach
 	void setup() {
-		module = new Module("CT417", "Software Engineering III", null, null, null);
+		module = new Module("CT417", "Software Engineering III");
 	}
 	
 	// ====================== Accessor Method Testing ======================

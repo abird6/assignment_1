@@ -18,7 +18,7 @@ public class CourseProgramme {
 	private List<Student> students;
 	private LocalDate startDate, endDate;
 	
-	CourseProgramme(String name, List<Module> modules, List<Student> students, LocalDate startDate, LocalDate endDate) {
+	public CourseProgramme(String name, List<Module> modules, List<Student> students, LocalDate startDate, LocalDate endDate) {
 		this.name = name;
 		this.modules = modules;
 		this.students = students;
@@ -26,6 +26,13 @@ public class CourseProgramme {
 		this.endDate = endDate;
 	}
 	
+	// overloaded constructor for instantiating independent CourseProgramme objects
+	public CourseProgramme(String name, LocalDate startDate, LocalDate endDate) {
+		this.name = name;
+		this.startDate = startDate;
+		this.endDate = endDate;
+	}
+
 	/**
 	 * 
 	 * Mutator Methods

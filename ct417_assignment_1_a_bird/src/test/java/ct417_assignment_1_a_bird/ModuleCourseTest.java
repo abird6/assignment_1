@@ -29,7 +29,7 @@ class ModuleCourseTest {
 		courses = new ArrayList<CourseProgramme>();
 		module = new Module("CT417", "Software Engineering III", null, courses, null);
 		
-		sampleCourse = new CourseProgramme("ECE", null, null, new LocalDate(2022, 9, 23), new LocalDate(2023, 5, 10));
+		sampleCourse = new CourseProgramme("ECE", new LocalDate(2022, 9, 23), new LocalDate(2023, 5, 10));
 	}
 	
 	// ====================== Accessor Method Testing ======================

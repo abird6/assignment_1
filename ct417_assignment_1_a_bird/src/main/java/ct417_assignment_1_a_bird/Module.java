@@ -16,13 +16,20 @@ public class Module {
 	private List<CourseProgramme> courses;
 	private Lecturer lecturer;
 	
-	Module(String id, String name, List<Student> students, List<CourseProgramme> courses, Lecturer lecturer) {
+	public Module(String id, String name, List<Student> students, List<CourseProgramme> courses, Lecturer lecturer) {
 		this.id = id;
 		this.name = name;
 		this.students = students;
 		this.courses = courses;
 		this.lecturer = lecturer;
 	}
+	
+	// overloaded constructor for instantiating independent Module objects
+	public Module(String id, String name) {
+		this.id = id;
+		this.name = name;
+	}
+
 	
 	/**
 	 * 

@@ -20,7 +20,7 @@ class ModuleLecturerTest {
 	
 	@BeforeEach
 	void setup() {
-		lecturer = new Lecturer("12345", "Dr John B", "40", new LocalDate(1990, 1, 1), null);
+		lecturer = new Lecturer("12345", "Dr John B", "40", new LocalDate(1990, 1, 1));
 		module = new Module("CT417", "Software Engineering III", null, null, lecturer);
 	}
 	
@@ -37,7 +37,7 @@ class ModuleLecturerTest {
 	@Test
 	@DisplayName("Test mutator for Lecturer object")
 	void testSetLecturer() {
-		Lecturer changeLecturer = new Lecturer("54321", "Dr Jim B", "41", new LocalDate(1980, 12, 1), null);
+		Lecturer changeLecturer = new Lecturer("54321", "Dr Jim B", "41", new LocalDate(1980, 12, 1));
 		module.setLecturer(changeLecturer);
 		assertSame(changeLecturer, module.getLecturer(), "New Lecturer object should be returned from accessor method");
 	}

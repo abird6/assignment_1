@@ -23,7 +23,7 @@ class StudentTest {
 	@BeforeEach
 	void setup() {
 		dob = new LocalDate(2000, 10, 10);
-		student = new Student("19357176", "Anthony Bird", "21", null, dob, null);	// course and module fields left null
+		student = new Student("19357176", "Anthony Bird", "21", dob);	// course and module fields left null
 	}
 	
 	// ====================== Accessor Method Testing ======================

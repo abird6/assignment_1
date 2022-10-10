@@ -23,7 +23,7 @@ class CourseProgrammeTest {
 	void setup() {
 		startDate = new LocalDate(2022, 9, 23);
 		endDate =  new LocalDate(2023, 5, 1);
-		course = new CourseProgramme("ECE", null, null, startDate, endDate);
+		course = new CourseProgramme("ECE", startDate, endDate);
 	}
 	
 	// ====================== Accessor Method Testing ======================

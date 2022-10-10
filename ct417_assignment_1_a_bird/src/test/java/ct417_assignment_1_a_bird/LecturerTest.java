@@ -21,7 +21,7 @@ class LecturerTest {
 	@BeforeEach
 	void setup() {
 		dob = new LocalDate(1980, 12, 25);
-		lecturer = new Lecturer("12345", "Dr Joe Bloggs", "42", dob, null);
+		lecturer = new Lecturer("12345", "Dr Joe Bloggs", "42", dob);
 	}
 	
 	// ====================== Accessor Method Testing ======================

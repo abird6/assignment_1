@@ -29,7 +29,7 @@ class CourseStudentTest {
 		students = new ArrayList<Student>();
 		course = new CourseProgramme(null, null, students, null, null);
 		
-		sampleStudent = new Student("19357176", "Anthony Bird", "21", null, new LocalDate(2000, 10, 10), null);
+		sampleStudent = new Student("19357176", "Anthony Bird", "21", new LocalDate(2000, 10, 10));
 	}
 	
 	// ====================== Accessor Method Testing ======================

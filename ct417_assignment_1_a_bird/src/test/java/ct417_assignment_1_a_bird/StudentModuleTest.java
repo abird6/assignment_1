@@ -28,7 +28,7 @@ class StudentModuleTest {
 		modules = new ArrayList<Module>();
 		student = new Student(null, null, null, null, null, modules);
 		
-		sampleModule = new Module("CT417", "Software Engineering III", null, null, null);
+		sampleModule = new Module("CT417", "Software Engineering III");
 	}
 	
 	// ====================== Accessor Method Testing ======================

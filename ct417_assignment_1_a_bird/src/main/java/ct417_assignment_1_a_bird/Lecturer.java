@@ -15,13 +15,22 @@ public class Lecturer {
 	private LocalDate dob;
 	private List<Module> modules;
 	
-	Lecturer(String id, String name, String age, LocalDate dob, List<Module> modules) {
+	public Lecturer(String id, String name, String age, LocalDate dob, List<Module> modules) {
 		this.id = id;
 		this.name = name;
 		this.age = age;
 		this.dob = dob;
 		this.modules = modules;
 	}
+	
+	// overloaded constructor for instantiating independent Lecturer objects
+	public Lecturer(String id, String name, String age, LocalDate dob) {
+		this.id = id;
+		this.name = name;
+		this.age = age;
+		this.dob = dob;
+	}
+
 	
 	/**
 	 * 
