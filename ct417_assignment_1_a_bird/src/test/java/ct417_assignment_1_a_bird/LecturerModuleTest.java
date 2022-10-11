@@ -49,6 +49,19 @@ class LecturerModuleTest {
 	}
 	
 	@Test
+	@DisplayName("Duplicate entry test")
+	void testDuplicateAdd() {
+		lecturer.addModule(sampleModule);
+		lecturer.addModule(sampleModule);
+		int count = 0;
+		for( Module m : lecturer.getModules() ) {
+			if( m == sampleModule )
+				count++;
+		}
+		assertEquals(1, count, "count should be 1 to show no duplicate entries");
+	}
+	
+	@Test
 	@DisplayName("Test mutator for removing modules")
 	void testRemoveModule() {
 		lecturer.addModule(sampleModule);

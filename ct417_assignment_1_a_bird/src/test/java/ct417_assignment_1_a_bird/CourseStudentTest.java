@@ -22,14 +22,16 @@ class CourseStudentTest {
 	// test objects
 	CourseProgramme course;
 	List<Student> students;
+	List<Module> sampleModules;
 	Student sampleStudent;
 	
 	@BeforeEach
 	void setup() {
 		students = new ArrayList<Student>();
-		course = new CourseProgramme(null, null, students, null, null);
+		sampleModules = new ArrayList<Module>();
+		course = new CourseProgramme(null, sampleModules, students, null, null);
 		
-		sampleStudent = new Student("19357176", "Anthony Bird", "21", new LocalDate(2000, 10, 10));
+		sampleStudent = new Student("19357176", "Anthony Bird", "21", null, new LocalDate(2000, 10, 10), null);
 	}
 	
 	// ====================== Accessor Method Testing ======================
@@ -47,6 +49,19 @@ class CourseStudentTest {
 	void testAddStudent() {
 		course.addStudent(sampleStudent);
 		assertTrue("Student list should now contain sample Student", students.contains(sampleStudent));
+	}
+	
+	@Test
+	@DisplayName("Duplicate entry test")
+	void testDuplicateAddStudent() {
+		course.addStudent(sampleStudent);
+		course.addStudent(sampleStudent);
+		int count = 0;
+		for( Student s : course.getStudents() ) {
+			if( s == sampleStudent )
+				count++;
+		}
+		assertEquals(1, count, "count should be 1 to show no duplicate entries");
 	}
 	
 	@Test

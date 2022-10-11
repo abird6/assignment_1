@@ -5,7 +5,11 @@
 
 package ct417_assignment_1_a_bird;
 
+import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -16,10 +20,14 @@ class StudentCourseTest {
 	// test objects
 	Student student;
 	CourseProgramme course;
+	List<Student> sampleStudents;
+	List<Module> sampleModules;
 	
 	@BeforeEach
 	void setup() {
-		course = new CourseProgramme("ECE", null, null, null, null);
+		sampleStudents = new ArrayList<Student>();
+		sampleModules = new ArrayList<Module>();
+		course = new CourseProgramme(null, sampleModules, sampleStudents, null, null);
 		student = new Student(null, null, null, course, null, null);
 	}
 	
@@ -36,9 +44,20 @@ class StudentCourseTest {
 	@Test
 	@DisplayName("Test mutator for CourseProgramme object")
 	void testSetCourse() {
-		CourseProgramme changeCourse = new CourseProgramme("CS", null, null, null, null);
+		List<Student> changeStudents = new ArrayList<Student>();
+		List<Module> changeModules = new ArrayList<Module>();
+		CourseProgramme changeCourse = new CourseProgramme(null, changeModules, changeStudents, null, null);
 		student.setCourse(changeCourse);
 		assertSame(changeCourse, student.getCourse(), "New CourseProgramme object should be returned from accessor method");
 	}
-
+	
+	@Test 
+	@DisplayName("Test student added to course object automatically")
+	void testStudentAutoAdd() {
+		List<Student> changeStudents = new ArrayList<Student>();
+		List<Module> changeModules = new ArrayList<Module>();
+		CourseProgramme changeCourse = new CourseProgramme(null, changeModules, changeStudents, null, null);		
+		student.setCourse(changeCourse);
+		assertTrue("Course should automatically add the student to its list", changeCourse.getStudents().contains(student));
+	}
 }

@@ -38,11 +38,38 @@ public class Module {
 	 */
 	public void setID(String id) { this.id = id; }
 	public void setName(String name) { this.name = name; }
-	public void addStudent(Student student) { students.add(student); }
-	public void removeStudent(Student student) { students.remove(student); }
-	public void addCourse(CourseProgramme course) { courses.add(course); }
-	public void removeCourse(CourseProgramme course) { courses.remove(course); }
-	public void setLecturer(Lecturer lecturer) { this.lecturer = lecturer; }
+	public void addStudent(Student student) { 
+		if ( students.indexOf(student) == -1 )				// checking if the module already has the student
+			this.students.add(student); 
+		if ( student.getModules().indexOf(this) == -1 )		// checking if the student already has the module 
+			student.addModule(this);
+	}
+	public void removeStudent(Student student) { 
+		if ( students.indexOf(student) != -1 )				// checking that the student can be removed from the module
+			students.remove(student); 
+		if ( student.getModules().indexOf(this) != -1 ) 	// checking that the module can be removed from the student's list
+			student.removeModule(this);
+	}
+	public void addCourse(CourseProgramme course) { 
+		if( this.getCourses().indexOf(course) == -1)
+			courses.add(course);
+		if( course.getModules().indexOf(this) == -1 )
+			course.addModule(this);
+	}
+	public void removeCourse(CourseProgramme course) { 
+		if( course.getModules().indexOf(this) != -1 )
+			courses.remove(course); 
+		if( this.getCourses().indexOf(course) != -1)
+			course.removeModule(this);
+	}
+	public void setLecturer(Lecturer lecturer) { 
+		this.lecturer = lecturer; 
+		if( lecturer != null ) {
+			if( lecturer.getModules().indexOf(this) == -1 )
+				lecturer.addModule(this);
+		}
+		
+	}
 	
 	/**
 	 * 

@@ -41,10 +41,36 @@ public class CourseProgramme {
 	public void setName(String name) { this.name = name; }
 	public void setStartDate(LocalDate startDate) { this.startDate = startDate; }
 	public void setEndDate(LocalDate endDate) { this.endDate = endDate; }
-	public void addModule(Module module) { modules.add(module); }
-	public void removeModule(Module module) { modules.remove(module); }
-	public void addStudent(Student student) { students.add(student); }
-	public void removeStudent(Student student) { students.remove(student); }
+	public void addModule(Module module) { 
+		if( module.getCourses().indexOf(this) == -1 )	// checking that the course can be added to the module
+			module.addCourse(this);
+		if( this.getModules().indexOf(module) == -1 )	// checking that the module can be added to the course
+			modules.add(module);
+	}
+	public void removeModule(Module module) { 
+		if( module.getCourses().indexOf(this) != -1) 	// checking that the course can be removed by the module
+			module.removeCourse(this);
+		if( this.getModules().indexOf(module) != -1)	// checking that the module can be removed by the course
+			modules.remove(module);
+	}
+	public void addStudent(Student student) {  
+		if( student.getCourse() != this)
+			student.setCourse(this);					// if not done already, assign this course to the student
+		if( students.indexOf(student) == -1 )
+			students.add(student);
+		for ( Module m : this.getModules() ) {		
+			student.addModule(m);					// assign the relevant modules to the student
+		}
+	}
+	public void removeStudent(Student student) { 
+		if( this.getStudents().indexOf(student) != -1) // checking that the student can be removed from the course 
+			students.remove(student);
+	
+		student.setCourse(null);					// the student now has no course 
+		for ( Module m : this.getModules() ) {
+			student.removeModule(m);				// clear the student's modules
+		}
+	}
 	
 	/**
 	 * 

@@ -21,14 +21,16 @@ class CourseModuleTest {
 	// test objects
 	CourseProgramme course;
 	List<Module> modules;
+	List<CourseProgramme> sampleCourses;
 	Module sampleModule;
 	
 	@BeforeEach
 	void setup() {
 		modules = new ArrayList<Module>();
+		sampleCourses = new ArrayList<CourseProgramme>();
 		course = new CourseProgramme(null, modules, null, null, null);
 		
-		sampleModule = new Module("CT417", "Software Engineering III");
+		sampleModule = new Module("CT417", "Software Engineering III", null, sampleCourses, null);
 	}
 	
 	// ====================== Accessor Method Testing ======================
@@ -47,6 +49,20 @@ class CourseModuleTest {
 		course.addModule(sampleModule);
 		assertTrue("Module list should now contain sample Module", modules.contains(sampleModule));
 	}
+	
+	@Test
+	@DisplayName("Duplicate entry test")
+	void testDuplicateEntry() {
+		course.addModule(sampleModule);
+		course.addModule(sampleModule);
+		int count = 0;
+		for( Module m : course.getModules() ) {
+			if( m== sampleModule )
+				count++;
+		}
+		assertEquals(1, count, "count should be 1 to show no duplicate entries");
+	}
+
 	
 	@Test
 	@DisplayName("Test mutator for removing modules")

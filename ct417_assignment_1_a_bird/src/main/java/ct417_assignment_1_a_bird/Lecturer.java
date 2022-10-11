@@ -42,8 +42,18 @@ public class Lecturer {
 	public void setName(String name) { this.name = name; }
 	public void setAge(String age) { this.age = age; }
 	public void setDOB(LocalDate dob) {	this.dob = dob; }
-	public void addModule(Module module) { this.modules.add(module); }
-	public void removeModule(Module module) { this.modules.remove(module);	}
+	public void addModule(Module module) { 
+		if( this.getModules().indexOf(module) == -1 )
+			modules.add(module);
+		if( module.getLecturer() != this )
+			module.setLecturer(this);
+	}
+	public void removeModule(Module module) { 
+		if( this.getModules().indexOf(module) != -1)
+			modules.remove(module);	
+		if( module.getLecturer() == this)
+			module.setLecturer(null);
+	}
 	
 	/**
 	 * 
