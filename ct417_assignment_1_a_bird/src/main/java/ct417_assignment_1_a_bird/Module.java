@@ -7,6 +7,7 @@
 
 package ct417_assignment_1_a_bird;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Module {
@@ -28,6 +29,9 @@ public class Module {
 	public Module(String id, String name) {
 		this.id = id;
 		this.name = name;
+		this.students = new ArrayList<Student>();
+		this.courses = new ArrayList<CourseProgramme>();
+		this.lecturer = new Lecturer(null, null, null, null);
 	}
 
 	
@@ -40,7 +44,7 @@ public class Module {
 	public void setName(String name) { this.name = name; }
 	public void addStudent(Student student) { 
 		if ( students.indexOf(student) == -1 )				// checking if the module already has the student
-			this.students.add(student); 
+			students.add(student); 
 		if ( student.getModules().indexOf(this) == -1 )		// checking if the student already has the module 
 			student.addModule(this);
 	}

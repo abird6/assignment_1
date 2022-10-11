@@ -22,16 +22,14 @@ class CourseStudentTest {
 	// test objects
 	CourseProgramme course;
 	List<Student> students;
-	List<Module> sampleModules;
 	Student sampleStudent;
 	
 	@BeforeEach
 	void setup() {
 		students = new ArrayList<Student>();
-		sampleModules = new ArrayList<Module>();
-		course = new CourseProgramme(null, sampleModules, students, null, null);
+		course = new CourseProgramme("ECE", new LocalDate(2023, 9, 2), new LocalDate(2024, 5, 1), students);
 		
-		sampleStudent = new Student("19357176", "Anthony Bird", "21", null, new LocalDate(2000, 10, 10), null);
+		sampleStudent = new Student("19357176", "Anthony Bird", "21", new LocalDate(2000, 10, 10));
 	}
 	
 	// ====================== Accessor Method Testing ======================

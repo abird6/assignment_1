@@ -7,6 +7,8 @@
 package ct417_assignment_1_a_bird;
 
 import org.joda.time.*;
+
+import java.util.ArrayList;
 import java.util.List;
 
 public class Lecturer {
@@ -29,6 +31,7 @@ public class Lecturer {
 		this.name = name;
 		this.age = age;
 		this.dob = dob;
+		this.modules = new ArrayList<Module>();
 	}
 
 	

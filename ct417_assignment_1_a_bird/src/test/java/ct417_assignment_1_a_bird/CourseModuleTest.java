@@ -12,6 +12,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.joda.time.LocalDate;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -20,17 +21,16 @@ class CourseModuleTest {
 
 	// test objects
 	CourseProgramme course;
-	List<Module> modules;
-	List<CourseProgramme> sampleCourses;
+	List<Module> modules;	
 	Module sampleModule;
+	
 	
 	@BeforeEach
 	void setup() {
 		modules = new ArrayList<Module>();
-		sampleCourses = new ArrayList<CourseProgramme>();
-		course = new CourseProgramme(null, modules, null, null, null);
+		course = new CourseProgramme("ECE", modules, new LocalDate(2023, 9, 12), new LocalDate(2024, 5, 6));
 		
-		sampleModule = new Module("CT417", "Software Engineering III", null, sampleCourses, null);
+		sampleModule = new Module("CT417", "Software Engineering III");
 	}
 	
 	// ====================== Accessor Method Testing ======================

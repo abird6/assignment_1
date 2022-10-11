@@ -7,6 +7,7 @@
 
 package ct417_assignment_1_a_bird;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.joda.time.LocalDate;
@@ -31,8 +32,25 @@ public class CourseProgramme {
 		this.name = name;
 		this.startDate = startDate;
 		this.endDate = endDate;
+		this.modules = new ArrayList<Module>();
+		this.students = new ArrayList<Student>();
 	}
-
+	
+	public CourseProgramme(String name, List<Module> modules, LocalDate startDate, LocalDate endDate) {
+		this.name = name;
+		this.startDate = startDate;
+		this.endDate = endDate;
+		this.modules = modules;
+		this.students = new ArrayList<Student>();
+	}
+	
+	public CourseProgramme(String name, LocalDate startDate, LocalDate endDate,  List<Student> students) {
+		this.name = name;
+		this.startDate = startDate;
+		this.endDate = endDate;
+		this.students = students;
+		this.modules = new ArrayList<Module>();
+	}
 	/**
 	 * 
 	 * Mutator Methods

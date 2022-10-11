@@ -22,15 +22,13 @@ class StudentModuleTest {
 	List<Module> modules;
 	Module sampleModule;
 	Student student;
-	List<Student> sampleStudents;
 	
 	@BeforeEach
 	void setup() {
 		modules = new ArrayList<Module>();
-		sampleStudents =  new ArrayList<Student>();
 		student = new Student(null, null, null, null, null, modules);
 		
-		sampleModule = new Module("CT417", "Software Engineering III", sampleStudents, null, null);
+		sampleModule = new Module("CT417", "Software Engineering III");
 	}
 	
 	// ====================== Accessor Method Testing ======================
