@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ct417_assignment_1_a_bird.ModuleLecturerTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2022-10-12T11:28:45" hostname="LAPTOP-3DVKI1TU" time="0.001">
+  <properties/>
+  <testcase name="testSetLecturer" classname="ct417_assignment_1_a_bird.ModuleLecturerTest" time="0.0"/>
+  <testcase name="testGetLecturer" classname="ct417_assignment_1_a_bird.ModuleLecturerTest" time="0.0"/>
+  <testcase name="testLecturerAutoAssign" classname="ct417_assignment_1_a_bird.ModuleLecturerTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ct417_assignment_1_a_bird.LecturerTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2022-10-12T11:28:45" hostname="LAPTOP-3DVKI1TU" time="0.005">
+  <properties/>
+  <testcase name="testChangeUsername" classname="ct417_assignment_1_a_bird.LecturerTest" time="0.001"/>
+  <testcase name="testGetID" classname="ct417_assignment_1_a_bird.LecturerTest" time="0.001"/>
+  <testcase name="testSetID" classname="ct417_assignment_1_a_bird.LecturerTest" time="0.0"/>
+  <testcase name="testGetName" classname="ct417_assignment_1_a_bird.LecturerTest" time="0.001"/>
+  <testcase name="testGetUsername" classname="ct417_assignment_1_a_bird.LecturerTest" time="0.0"/>
+  <testcase name="testGetAge" classname="ct417_assignment_1_a_bird.LecturerTest" time="0.0"/>
+  <testcase name="testGetDOB" classname="ct417_assignment_1_a_bird.LecturerTest" time="0.0"/>
+  <testcase name="testSetName" classname="ct417_assignment_1_a_bird.LecturerTest" time="0.0"/>
+  <testcase name="testSetAge" classname="ct417_assignment_1_a_bird.LecturerTest" time="0.0"/>
+  <testcase name="testSetDOB" classname="ct417_assignment_1_a_bird.LecturerTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

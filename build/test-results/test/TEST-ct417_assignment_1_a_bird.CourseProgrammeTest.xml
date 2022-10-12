@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ct417_assignment_1_a_bird.CourseProgrammeTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2022-10-12T11:28:45" hostname="LAPTOP-3DVKI1TU" time="0.002">
+  <properties/>
+  <testcase name="testGetEndDate" classname="ct417_assignment_1_a_bird.CourseProgrammeTest" time="0.0"/>
+  <testcase name="testGetStartDate" classname="ct417_assignment_1_a_bird.CourseProgrammeTest" time="0.0"/>
+  <testcase name="testGetName" classname="ct417_assignment_1_a_bird.CourseProgrammeTest" time="0.001"/>
+  <testcase name="testSetStartDate" classname="ct417_assignment_1_a_bird.CourseProgrammeTest" time="0.0"/>
+  <testcase name="testSetEndDate" classname="ct417_assignment_1_a_bird.CourseProgrammeTest" time="0.0"/>
+  <testcase name="testSetName" classname="ct417_assignment_1_a_bird.CourseProgrammeTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

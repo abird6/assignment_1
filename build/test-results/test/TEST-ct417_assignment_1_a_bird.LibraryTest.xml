@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ct417_assignment_1_a_bird.LibraryTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-10-12T11:28:45" hostname="LAPTOP-3DVKI1TU" time="0.002">
+  <properties/>
+  <testcase name="testSomeLibraryMethod" classname="ct417_assignment_1_a_bird.LibraryTest" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
