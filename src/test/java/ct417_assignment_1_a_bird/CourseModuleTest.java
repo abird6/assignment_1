@@ -30,7 +30,7 @@ class CourseModuleTest {
 	
 	
 	@Before
-	void setup() {
+	public CourseModuleTest() {
 		modules = new ArrayList<Module>();
 		course = new CourseProgramme("ECE", modules, new LocalDate(2023, 9, 12), new LocalDate(2024, 5, 6));
 		
@@ -40,20 +40,20 @@ class CourseModuleTest {
 	// ====================== Accessor Method Testing ======================
 	
 	@Test
-	void testGetModules() {
+	public void testGetModules() {
 		assertEquals("CourseProgramme has list of modules defined in setup()", modules, course.getModules());
 	}
 	
 	// ====================== Mutator Method Testing ======================
 	
 	@Test
-	void testAddModule() {
+	public void testAddModule() {
 		course.addModule(sampleModule);
 		assertTrue("Module list should now contain sample Module", modules.contains(sampleModule));
 	}
 	
 	@Test
-	void testDuplicateEntry() {
+	public void testDuplicateEntry() {
 		course.addModule(sampleModule);
 		course.addModule(sampleModule);
 		int count = 0;
@@ -66,7 +66,7 @@ class CourseModuleTest {
 
 	
 	@Test
-	void testRemoveModule() {
+	public void testRemoveModule() {
 		course.addModule(sampleModule);
 		course.removeModule(sampleModule);
 		assertFalse("Module list should not contain sample Module", modules.contains(sampleModule));
