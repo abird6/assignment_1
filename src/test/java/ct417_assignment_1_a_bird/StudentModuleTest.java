@@ -5,26 +5,34 @@
 
 package ct417_assignment_1_a_bird;
 
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
-import static org.junit.jupiter.api.Assertions.*;
+// import static org.junit.Assert.assertFalse;
+// import static org.junit.Assert.assertTrue;
+// import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
+// import org.junit.jupiter.api.BeforeEach;
+// import org.junit.jupiter.api.DisplayName;
+// import org.junit.jupiter.api.Test;
 
-class StudentModuleTest {
+import static org.junit.Assert.*;
+import org.junit.Test;
+import org.junit.Before;
+
+public class StudentModuleTest {
 	
 	// test objects
 	List<Module> modules;
 	Module sampleModule;
 	Student student;
 	
-	@BeforeEach
-	void setup() {
+	public StudentModuleTest() {
+
+	}
+
+	@Before
+	public void setup() {
 		modules = new ArrayList<Module>();
 		student = new Student(null, null, null, null, null, modules);
 		
@@ -34,23 +42,20 @@ class StudentModuleTest {
 	// ====================== Accessor Method Testing ======================
 	
 	@Test
-	@DisplayName("Test accesor for modules")
-	void testGetModules() {
-		assertEquals(modules, student.getModules(), "Student has list of modules defined in setup()");
+	public void testGetModules() {
+		assertEquals("Student has list of modules defined in setup()", modules, student.getModules());
 	}
 	
 	// ====================== Mutator Method Testing ======================
 	
 	@Test
-	@DisplayName("Test mutator for adding modules")
-	void testAddModule() {
+	public void testAddModule() {
 		student.addModule(sampleModule);
 		assertTrue("Module list should now contain sample Module", modules.contains(sampleModule));
 	}
 	
 	@Test
-	@DisplayName("Duplicate entry - adding a module the student already has")
-	void testDuplicateAddModule() {
+	public void testDuplicateAddModule() {
 		student.addModule(sampleModule);
 		student.addModule(sampleModule);
 		int count = 0;
@@ -58,12 +63,11 @@ class StudentModuleTest {
 			if( m == sampleModule )
 				count++;
 		}
-		assertEquals(1, count, "count should be 1 to show no duplicate entries");
+		assertEquals("count should be 1 to show no duplicate entries", 1, count);
 	}
 	
 	@Test
-	@DisplayName("Test mutator for removing modules")
-	void testRemoveModule() {
+	public void testRemoveModule() {
 		student.addModule(sampleModule);
 		student.removeModule(sampleModule);
 		assertFalse("Module list should not contain sample Module", modules.contains(sampleModule));

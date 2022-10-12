@@ -7,48 +7,52 @@
 
 package ct417_assignment_1_a_bird;
 
-import static org.junit.jupiter.api.Assertions.*;
+// import static org.junit.jupiter.api.Assertions.*;
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
+// import org.junit.jupiter.api.BeforeEach;
+// import org.junit.jupiter.api.DisplayName;
+// import org.junit.jupiter.api.Test;
 
-class ModuleTest {
+import static org.junit.Assert.*;
+import org.junit.Test;
+import org.junit.Before;
+
+public class ModuleTest {
 
 	// test objects
 	Module module;
 	
-	@BeforeEach
-	void setup() {
+	public ModuleTest() {
+
+	}
+
+	@Before
+	public void setup() {
 		module = new Module("CT417", "Software Engineering III");
 	}
 	
 	// ====================== Accessor Method Testing ======================
 	@Test
-	@DisplayName("Test accessor method for 'id'")
-	void testGetID() {
-		assertEquals("CT417", module.getID(), "Module id is CT417");
+	public void testGetID() {
+		assertEquals("Module id is CT417", "CT417", module.getID());
 	}
 	
 	@Test
-	@DisplayName("Test accessor method for 'name'")
-	void testGetName() {
-		assertEquals("Software Engineering III", module.getName(), "Module name is Software Engineering III");
+	public void testGetName() {
+		assertEquals("Module name is Software Engineering III", "Software Engineering III", module.getName());
 	}
 	
 	// ====================== Mutator Method Testing ======================
 	
 	@Test
-	@DisplayName("Test mutator for 'id'")
-	void testSetID() {
+	public void testSetID() {
 		module.setID("EE123");
-		assertEquals("EE123", module.getID(), "Module should now have and id='EE123'");
+		assertEquals("Module should now have and id='EE123'", "EE123", module.getID());
 	}
 	
 	@Test
-	@DisplayName("Test mutator for 'name'")
-	void testSetName() {
+	public void testSetName() {
 		module.setName("Analogue Systems");
-		assertEquals("Analogue Systems", module.getName(), "Module should now have name='Analogue Systems'");
+		assertEquals("Module should now have name='Analogue Systems'", "Analogue Systems", module.getName());
 	}
 }
