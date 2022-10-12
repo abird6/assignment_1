@@ -1,21 +1,13 @@
 /**
  * StudentModule test class used to test 'Module' coupling in 'Student.java'
  * @author Anthony Bird
+ * email: a.bird6@universityofgalway.ie
  */
 
 package ct417_assignment_1_a_bird;
 
-// import static org.junit.Assert.assertFalse;
-// import static org.junit.Assert.assertTrue;
-// import static org.junit.jupiter.api.Assertions.*;
-
 import java.util.ArrayList;
 import java.util.List;
-
-// import org.junit.jupiter.api.BeforeEach;
-// import org.junit.jupiter.api.DisplayName;
-// import org.junit.jupiter.api.Test;
-
 import static org.junit.Assert.*;
 import org.junit.Test;
 import org.junit.Before;
@@ -35,26 +27,25 @@ public class StudentModuleTest {
 	public void setup() {
 		modules = new ArrayList<Module>();
 		student = new Student(null, null, null, null, null, modules);
-		
 		sampleModule = new Module("CT417", "Software Engineering III");
 	}
 	
 	// ====================== Accessor Method Testing ======================
 	
-	@Test
+	@Test // testing Student.getModules()
 	public void testGetModules() {
 		assertEquals("Student has list of modules defined in setup()", modules, student.getModules());
 	}
 	
 	// ====================== Mutator Method Testing ======================
 	
-	@Test
+	@Test // testing Student.addModule()
 	public void testAddModule() {
 		student.addModule(sampleModule);
 		assertTrue("Module list should now contain sample Module", modules.contains(sampleModule));
 	}
 	
-	@Test
+	@Test // testing Student.addModule() w/ duplicate entry
 	public void testDuplicateAddModule() {
 		student.addModule(sampleModule);
 		student.addModule(sampleModule);
@@ -66,7 +57,7 @@ public class StudentModuleTest {
 		assertEquals("count should be 1 to show no duplicate entries", 1, count);
 	}
 	
-	@Test
+	@Test // testing Student.removeModule()
 	public void testRemoveModule() {
 		student.addModule(sampleModule);
 		student.removeModule(sampleModule);

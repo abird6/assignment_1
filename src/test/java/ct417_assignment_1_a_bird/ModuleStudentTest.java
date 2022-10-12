@@ -1,26 +1,17 @@
 /**
  * ModuleStudent test class used to test 'Student' coupling with 'Module.java'
  * @author Anthony Bird
+ * email: a.bird6@universityofgalway.ie
  */
 
 package ct417_assignment_1_a_bird;
 
-// import static org.junit.Assert.assertFalse;
-// import static org.junit.Assert.assertTrue;
-// import static org.junit.jupiter.api.Assertions.*;
-
 import java.util.ArrayList;
 import java.util.List;
-
 import org.joda.time.LocalDate;
-// import org.junit.jupiter.api.BeforeEach;
-// import org.junit.jupiter.api.DisplayName;
-// import org.junit.jupiter.api.Test;
-
 import static org.junit.Assert.*;
 import org.junit.Test;
 import org.junit.Before;
-
 
 public class ModuleStudentTest {
 	
@@ -44,20 +35,20 @@ public class ModuleStudentTest {
 	
 	// ====================== Accessor Method Testing ======================
 	
-	@Test
+	@Test // testing Module.getStudents()
 	public void testGetStudents() {
 		assertEquals("Module has list of Student objects defined in setup()", students, module.getStudents());
 	}
 	
 	// ====================== Mutator Method Testing ======================
 	
-	@Test
+	@Test // testing Module.addStudent()
 	public void testAddStudent() {
 		module.addStudent(sampleStudent);
 		assertTrue("Student list should now contain sample Student", students.contains(sampleStudent));
 	}
 	
-	@Test
+	@Test // testing Module.addStudent() w/ duplicate entry
 	public void testDuplicateAdd() {
 		module.addStudent(sampleStudent);
 		module.addStudent(sampleStudent);
@@ -69,11 +60,10 @@ public class ModuleStudentTest {
 		assertEquals("count should be 1 to show no duplicate entries", 1, count);
 	}
 	
-	@Test
+	@Test // testing Module.removeStudent()
 	public void testRemoveStudent() {
 		module.addStudent(sampleStudent);
 		module.removeStudent(sampleStudent);
 		assertFalse("Student list should not contain sample Student", students.contains(sampleStudent));
 	}
-
 }

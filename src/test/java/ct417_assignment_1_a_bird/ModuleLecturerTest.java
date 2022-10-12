@@ -1,18 +1,12 @@
 /**
  * ModuleLecturer test class used to test 'Lecturer' coupling with 'Module.java'
  * @author Anthony Bird
+ * email: a.bird6@universityofgalway.ie
  */
 
 package ct417_assignment_1_a_bird;
 
-// import static org.junit.Assert.assertTrue;
-// import static org.junit.jupiter.api.Assertions.*;
-
 import org.joda.time.LocalDate;
-// import org.junit.jupiter.api.BeforeEach;
-// import org.junit.jupiter.api.DisplayName;
-// import org.junit.jupiter.api.Test;
-
 import static org.junit.Assert.*;
 import org.junit.Test;
 import org.junit.Before;
@@ -35,21 +29,21 @@ public class ModuleLecturerTest {
 	
 	// ====================== Accessor Method Testing =====================
 	
-	@Test
+	@Test // testing Module.getLecturer()
 	public void testGetLecturer() {
 		assertSame("Lecturer object included in Module instance should be returned", lecturer, module.getLecturer());
 	}
 	
 	// ====================== Mutator Method Testing =====================
 	
-	@Test
+	@Test // testing Module.setLecturer()
 	public void testSetLecturer() {
 		Lecturer changeLecturer = new Lecturer("54321", "Dr Jim B", "41", new LocalDate(1980, 12, 1));
 		module.setLecturer(changeLecturer);
 		assertSame("New Lecturer object should be returned from accessor method", changeLecturer, module.getLecturer());
 	}
 	
-	@Test
+	@Test // testing Module.setLecturer() so Lecturer.getModules() is auto updated
 	public void testLecturerAutoAssign() {
 		Lecturer changeLecturer = new Lecturer("54321", "Dr Jim B", "41", new LocalDate(1980, 12, 1));
 		module.setLecturer(changeLecturer);

@@ -1,6 +1,7 @@
 /**
  * CourseModule test class used to test 'Module' coupling with 'CourseProgramme.java'
  * @author Anthony Bird
+ * email: a.bird6@universityofgalway.ie
  */
 
 package ct417_assignment_1_a_bird;
@@ -8,18 +9,9 @@ package ct417_assignment_1_a_bird;
 import static org.junit.Assert.*;
 import org.junit.Test;
 import org.junit.Before;
-
-// import static org.junit.Assert.assertFalse;
-// import static org.junit.Assert.assertTrue;
-// import static org.junit.jupiter.api.Assertions.*;
-
 import java.util.ArrayList;
 import java.util.List;
-
 import org.joda.time.LocalDate;
-// import org.junit.jupiter.api.BeforeEach;
-// import org.junit.jupiter.api.DisplayName;
-// import org.junit.jupiter.api.Test;
 
 public class CourseModuleTest {
 
@@ -36,26 +28,25 @@ public class CourseModuleTest {
 	public void setup() {
 		modules = new ArrayList<Module>();
 		course = new CourseProgramme("ECE", modules, new LocalDate(2023, 9, 12), new LocalDate(2024, 5, 6));
-		
 		sampleModule = new Module("CT417", "Software Engineering III");
 	}
 	
 	// ====================== Accessor Method Testing ======================
 	
-	@Test
-	public void testGetModules() {
+	@Test // testing CourseProgramme.getModules()
+	public void testGetModules() { 
 		assertEquals("CourseProgramme has list of modules defined in setup()", modules, course.getModules());
 	}
 	
 	// ====================== Mutator Method Testing ======================
 	
-	@Test
+	@Test // testing CourseProgramme.addModule()
 	public void testAddModule() {
 		course.addModule(sampleModule);
 		assertTrue("Module list should now contain sample Module", modules.contains(sampleModule));
 	}
 	
-	@Test
+	@Test // testing CourseProgramme.addModule() with duplicate entry
 	public void testDuplicateEntry() {
 		course.addModule(sampleModule);
 		course.addModule(sampleModule);
@@ -68,7 +59,7 @@ public class CourseModuleTest {
 	}
 
 	
-	@Test
+	@Test // testing CourseProgramme.removeModule()
 	public void testRemoveModule() {
 		course.addModule(sampleModule);
 		course.removeModule(sampleModule);
