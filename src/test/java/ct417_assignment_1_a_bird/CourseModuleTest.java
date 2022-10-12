@@ -21,7 +21,7 @@ import org.joda.time.LocalDate;
 // import org.junit.jupiter.api.DisplayName;
 // import org.junit.jupiter.api.Test;
 
-class CourseModuleTest {
+public class CourseModuleTest {
 
 	// test objects
 	CourseProgramme course;
