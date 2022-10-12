@@ -33,7 +33,7 @@ class CourseModuleTest {
 	}	
 
 	@Before
-	public setup() {
+	public void setup() {
 		modules = new ArrayList<Module>();
 		course = new CourseProgramme("ECE", modules, new LocalDate(2023, 9, 12), new LocalDate(2024, 5, 6));
 		
